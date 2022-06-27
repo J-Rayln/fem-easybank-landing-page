@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+/*
+    Utility Classes
+*/
+
+.container {
+    padding: 0 f.rem(24);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include m.breakpoint(lg) {
+        padding: 0;
+        max-width: v.$max-width-desktop;
+    }
+}
+
+// Flexbox Utilities
+.flex {
+    display: flex;
+}
+
+// Visibility Utilities
+
+.hide-for-mobile {
+    // hide content SMALLER than the large breakpoint
+    @include m.breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    // hide content on viewports LARGER
+    @include m.breakpoint(lg) {
+        display: none;
+    }
+}

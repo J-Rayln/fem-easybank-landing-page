@@ -1,0 +1,34 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+/*
+  global styles
+*/
+
+body {
+    color: var(--clr-neutral-100);
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-normal);
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}

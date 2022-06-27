@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+/*
+  button styles
+*/
+
+.btn {
+    background: linear-gradient(to left, var(--clr-primary-grn), var(--clr-primary-cyn));
+    color: var(--clr-neutral-white) !important;
+    font-weight: var(--fw-bold);
+    padding: f.rem(13) f.rem(30);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: opacity var(--transition-std);
+
+    &:hover {
+        opacity: 0.75;
+    }
+}

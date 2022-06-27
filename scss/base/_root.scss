@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as v;
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+:root {
+    
+    
+    /* colors */
+    @each $cat, $shades in v.$colors {
+        @each $shade, $value in $shades {
+            --clr-#{$cat}-#{$shade}: #{$value};
+        }
+    }
+    
+    /* typography */
+    @each $property, $maps in v.$typography {
+        $prefix: map-get($maps, "prefix");
+        $values: map-get($maps, "values");
+        
+        @each $key, $value in $values {
+            --#{$prefix}-#{$key}: #{inspect($value)};
+        }
+    }
+
+    /* Utility */
+    @each $property, $maps in v.$utilities {
+        $prefix: map-get($maps, "prefix");
+        $values: map-get($maps, "values");
+        
+        @each $key, $value in $values {
+            --#{$prefix}-#{$key}: #{inspect($value)};
+        }
+    }
+
+}

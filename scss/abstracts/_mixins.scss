@@ -1,0 +1,16 @@
+@use 'variables' as v;
+
+// output media queries based on breakpoints
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+@mixin breakpoint($size) {
+    @media (min-width: map-get(v.$breakpoints, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get(v.$breakpoints, $size)){
+        @content;
+    }
+}

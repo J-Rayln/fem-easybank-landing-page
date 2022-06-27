@@ -1,0 +1,161 @@
+@use 'functions' as f;
+
+// colors
+
+// Colors
+
+$colors: (
+    "primary": (
+        "blu":  hsl(233, 26%, 24%),  // Dark Blue
+        "grn":  hsl(136, 65%, 51%),  // Lime Green
+        "cyn":  hsl(192, 70%, 51%),  // Bright Cyan
+    ),
+    "neutral": (
+        "100":  hsl(233, 8%, 62%),   // Grayish Blue
+        "200":  hsl(220, 16%, 96%),  // Light Grayish Blue
+        "300":  hsl(0, 0%, 98%),     // Very Light Gray
+        "white":hsl(0, 0%, 100%),
+    ),
+);
+
+// breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// 
+// Values in the 'sm' and 'lg' breakpoint sizes will affect
+// variable font sizes.
+
+$breakpoints: (
+    xs: 0,
+    sm: 36.125rem, //576px,
+    md: 48rem, //768px,
+    lg: 62rem, //992px,
+    xl: 80rem, //1200px,
+    xxl: 87.5rem //1400px
+) !default;
+
+// for use in max-width media queries
+$breakpoints-down: (
+    sm: 47.875rem, //768px,
+    md: 61.875rem, //992px,
+    lg: 79.875rem, //1200px,
+    xl: 86.125rem //1400px
+) !default;
+
+// minimum/maximum container widths
+//
+// Define the maximum width for each device size.  These values
+// are used in media queries as well as variable font functions
+// use f.rem() function to calculate rems
+$max-width-phone:   f.rem(700);
+$max-width-tablet:  f.rem(900);
+$max-width-desktop: f.rem(1110);
+
+// Typography
+
+$font-family-body: 'Public Sans', sans-serif;
+$font-family-headings: 'Public Sans', sans-serif;
+$font-family-monospace: 'Public Sans', sans-serif;
+
+
+$min-max-font-size: (
+    "body": (
+        "min": .875rem, //14px,
+        "max": 1.125rem, //18px,
+    ),
+    "h1": (
+        "min": 2rem, //32px,
+        "max": 2.75rem, //44px,
+    ),
+    "h2": (
+        "min": 1.75rem, //26px,
+        "max": 2.125rem, //34px,
+    ),
+    "h3": (
+        "min": 1.125rem, //18px,
+        "max": 1.375rem, //22px,
+    ),
+    "h4": (
+        "min": .9375rem, //15px,
+        "max": 1rem, //16px,
+    ),
+);
+
+// build clamp() functions for responsive font sizes
+$fs-body: f.clamp-calc(
+    map-get($breakpoints, "sm"),  
+    map-get($breakpoints, "lg"),  
+    map-get($min-max-font-size, "body", "min"), 
+    map-get($min-max-font-size, "body", "max")
+    );
+$fs-h1: f.clamp-calc(
+    map-get($breakpoints, "sm"),  
+    map-get($breakpoints, "lg"),  
+    map-get($min-max-font-size, "h1", "min"), 
+    map-get($min-max-font-size, "h1", "max")
+    );
+$fs-h2: f.clamp-calc(
+    map-get($breakpoints, "sm"),  
+    map-get($breakpoints, "lg"),  
+    map-get($min-max-font-size, "h2", "min"), 
+    map-get($min-max-font-size, "h2", "max")
+    );
+$fs-h3: f.clamp-calc(
+    map-get($breakpoints, "sm"),  
+    map-get($breakpoints, "lg"),  
+    map-get($min-max-font-size, "h3", "min"), 
+    map-get($min-max-font-size, "h3", "max")
+    );
+$fs-h4: f.clamp-calc(
+    map-get($breakpoints, "sm"),  
+    map-get($breakpoints, "lg"),  
+    map-get($min-max-font-size, "h4", "min"), 
+    map-get($min-max-font-size, "h4", "max")
+    );
+
+
+$typography: (
+    "font-family": (
+        "prefix": "ff",
+        "values": (
+            "body": $font-family-body,
+            // "heading": $font-family-headings,
+            // "code": $font-family-monospace,
+        ),
+    ),
+    "font-size": (
+        "prefix": "fs",
+        "values": (
+            "body": $fs-body,
+            "h1": $fs-h1,
+            "h2": $fs-h2,
+            "h3": $fs-h3,
+            "h4": $fs-h4,
+        ),
+    ),
+    "font-weight": (
+        "prefix": "fw",
+        "values": (
+            "light": 300,
+            "normal": 400,
+            "bold": 700,
+        ),
+    ),
+);
+
+// utilities
+
+// Use this map to define utilites that will be stored as CSS
+// custom properties in the :root{} element.
+
+$utilities: (
+    "transition": (
+        "prefix": "transition",
+        "values": (
+            "fast": 150ms ease-in-out,
+            "std": 200ms ease-in-out,
+            "slow": 300ms ease-in-out,
+        ),
+    ),
+);
