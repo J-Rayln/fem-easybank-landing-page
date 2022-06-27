@@ -1,0 +1,121 @@
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+/*
+    Features Classes
+*/
+
+.footer {
+    background-color: var(--clr-primary-blu);
+    font-size: f.rem(14);
+    padding-top: f.rem(40);
+    padding-bottom: f.rem(45);
+
+    a {
+        color: var(--clr-neutral-white);
+
+        &:hover {
+            color: var(--clr-primary-grn);
+        }
+    }
+
+    &__logo {
+        margin-bottom: f.rem(30);
+
+        img {
+            display: inline-block;
+        }
+    }
+
+    &__social {
+        margin-bottom: f.rem(30);
+
+        a {
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+
+        img {
+            display: inline-block
+        }
+    }
+
+    &__links {
+        
+        &--1 {
+            li {
+                margin-bottom: f.rem(22);
+            }
+        }
+        
+        &--2 {
+            margin-bottom: f.rem(56);
+
+            li:not(:last-child) {
+                margin-bottom: f.rem(22);
+            }
+        }
+    }
+
+    &__cta {
+        margin-bottom: f.rem(48);
+    }
+
+    &__copyright {
+        color: var(--clr-neutral-100);
+    }
+
+// Desktop Styles
+    @include m.breakpoint(lg) {
+
+        &__container {
+            display: grid;
+            grid-template-columns: f.rem(285) f.rem(190) f.rem(190) 1fr;
+            grid-template-areas: 
+                "logo links-1 links-2 cta"
+                "social links-1 links-2 copyright";
+        }
+
+        &__logo {
+            grid-area: logo;
+        }
+
+        &__social {
+            grid-area: social;
+            align-self: end;
+            margin: 0;
+        }
+
+        &__links {
+            margin: 0;
+
+            &--1 {
+                grid-area: links-1;
+                align-self: center;
+
+                li:last-child {
+                    margin-bottom: 0
+                }
+
+            }
+
+            &--2 {
+                grid-area: links-2;
+                align-self: center;
+            }
+        }
+
+        &__cta {
+            grid-area: cta;
+            justify-self: end;
+            padding-top: f.rem(13);
+        }
+
+        &__copyright {
+            grid-area: copyright;
+            justify-self: end;
+            align-self: end;
+        }
+    }
+}
