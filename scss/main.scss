@@ -1,15 +1,23 @@
+// main.scss
+// 
+This file contains the structure for all individual 
 
 
+// base/global classes
 @forward 'base/root';
 @forward 'base/reset';
 @forward 'base/globals';
 @forward 'base/utility';
 @forward 'base/animations';
 
+
+// reusable components
 @forward 'components/fem';
 @forward 'components/buttons';
-@forward 'components/header';
 
+
+// page structure & indiividual sections
+@forward 'pages/header';
 @forward 'pages/home-hero';
 @forward 'pages/home-features';
 @forward 'pages/home-latest';
