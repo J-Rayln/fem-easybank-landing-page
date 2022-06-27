@@ -13,9 +13,8 @@
     padding: f.rem(13) f.rem(30);
     border-radius: 2rem;
     cursor: pointer;
-    transition: opacity var(--transition-std);
 
     &:hover {
-        opacity: 0.75;
+        filter: brightness(115%) saturate(90%);
     }
 }

@@ -289,10 +289,9 @@ ul, li {
   padding: 0.8125rem 1.875rem;
   border-radius: 2rem;
   cursor: pointer;
-  transition: opacity var(--transition-std);
 }
 .btn:hover {
-  opacity: 0.75;
+  filter: brightness(115%) saturate(90%);
 }
 
 /*
