@@ -110,6 +110,9 @@ body {
   font-size: var(--fs-body);
   font-weight: var(--fw-normal);
 }
+body.noscroll {
+  overflow: hidden;
+}
 
 a, a:visited, a:hover {
   text-decoration: none;
