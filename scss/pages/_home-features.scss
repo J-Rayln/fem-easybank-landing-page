@@ -1,0 +1,63 @@
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+/*
+    Features Classes
+*/
+
+.features {
+    background-color: var(--clr-neutral-200);
+    padding: f.rem(70) 0;
+
+    @include m.breakpoint(lg) {
+        padding: f.rem(110) 0;
+    }
+
+    &__container {
+        
+        & > p {
+            padding-bottom: f.rem(60);
+            
+            @include m.breakpoint(lg) {
+                max-width: f.rem(650);
+                padding-bottom: f.rem(70);
+            }
+        }
+    }
+    
+    &__title {
+
+        h3 {
+            margin-bottom: f.rem(30);
+        
+            @include m.breakpoint(lg) {
+                margin-bottom: f.rem(35);
+            }
+        }
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: f.rem(35);
+
+        @include m.breakpoint(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include m.breakpoint(lg) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__icon {
+        margin-bottom: f.rem(30);
+        display: inline-block;
+
+        @include m.breakpoint(lg) {
+            margin-bottom: f.rem(45);
+        }
+    }
+}
+
+// TODO #4 new task to test todo functionality

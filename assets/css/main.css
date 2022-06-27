@@ -150,6 +150,12 @@ h2 {
 
 h3 {
   font-size: var(--fs-h3);
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 62rem) {
+  h3 {
+    margin-bottom: 2.1875rem;
+  }
 }
 
 h4 {
@@ -446,7 +452,7 @@ h4 {
   .hero__img {
     flex: 3;
     order: 2;
-    height: 41rem;
+    height: 41.25rem;
     background-image: none;
   }
 }
@@ -454,7 +460,7 @@ h4 {
   .hero__img::before {
     content: "";
     position: absolute;
-    height: 100%;
+    height: 104%;
     background-image: url("/assets/images/bg-intro-desktop.svg");
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -491,10 +497,69 @@ h4 {
 .hero__text p {
   margin-bottom: 2.5rem;
 }
+@media (max-width: 48rem) {
+  .hero__text {
+    padding-bottom: 5.625rem;
+  }
+}
 @media (min-width: 62rem) {
   .hero__text {
     flex: 2;
     order: 1;
     text-align: left;
+  }
+}
+
+/*
+    Features Classes
+*/
+.features {
+  background-color: var(--clr-neutral-200);
+  padding: 4.375rem 0;
+}
+@media (min-width: 62rem) {
+  .features {
+    padding: 6.875rem 0;
+  }
+}
+.features__container > p {
+  padding-bottom: 3.75rem;
+}
+@media (min-width: 62rem) {
+  .features__container > p {
+    max-width: 40.625rem;
+    padding-bottom: 4.375rem;
+  }
+}
+.features__title h3 {
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 62rem) {
+  .features__title h3 {
+    margin-bottom: 2.1875rem;
+  }
+}
+.features__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.1875rem;
+}
+@media (min-width: 48rem) {
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 62rem) {
+  .features__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.features__icon {
+  margin-bottom: 1.875rem;
+  display: inline-block;
+}
+@media (min-width: 62rem) {
+  .features__icon {
+    margin-bottom: 2.8125rem;
   }
 }/*# sourceMappingURL=main.css.map */
