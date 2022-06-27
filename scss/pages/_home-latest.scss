@@ -1,0 +1,88 @@
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+/*
+    Latest Articles Classes
+*/
+
+.latest {
+    background-color: var(--clr-neutral-300);
+    padding: f.rem(95) 0;
+
+    &__container {
+
+    }
+
+    &__title {
+        font-size: var(--fs-h2);
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: f.rem(70);
+        margin-top: f.rem(40);
+    }
+    
+    &__img {
+        height: f.rem(200);
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    &__copy {
+        text-align: start;
+        padding: f.rem(32) f.rem(32) 0 f.rem(32);
+
+        &--author {
+            margin-bottom: 1rem;
+
+        }
+
+        &--title {
+            font-size: var(--fs-h4);
+            font-weight: var(--fw-bold);
+            margin-bottom: 1rem;
+
+            a {
+                color: var(--clr-primary-blu);
+
+                &:hover {
+                    color: var(--clr-primary-grn);
+                }
+            }
+        }
+    }
+
+    @include m.breakpoint(md) {
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @include m.breakpoint(lg) {
+        padding-bottom: f.rem(105);
+
+        &__grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: f.rem(30);
+        }
+    
+        &__copy {
+            padding: f.rem(30) f.rem(26) 0 f.rem(26);
+    
+            &--author {
+                font-size: f.rem(10);
+            }
+    
+            &--title {
+                font-size: f.rem(16);
+            }
+    
+            &--text {
+                font-size: f.rem(12);
+            }
+        }
+    }
+}
