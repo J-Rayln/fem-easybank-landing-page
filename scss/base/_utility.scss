@@ -7,14 +7,21 @@
 */
 
 .container {
-    padding: 0 f.rem(24);
     margin-left: auto;
     margin-right: auto;
-
-    @include m.breakpoint(lg) {
-        padding: 0;
-        max-width: v.$max-width-desktop;
+    max-width: v.$max-width-desktop;
+    
+    @include m.breakpoint-down(md) {
+        padding: 0 f.rem(24);
     }
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-x {
+    padding: var(--padding-x);
 }
 
 // Flexbox Utilities
