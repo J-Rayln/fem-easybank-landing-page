@@ -39,6 +39,14 @@
         img {
             display: inline-block
         }
+
+        a svg:hover #facebook,
+        a svg:hover #youtube,
+        a svg:hover #twitter,
+        a svg:hover #pinterest,
+        a svg:hover #instagram {
+            fill: #31d35c;
+        }
     }
 
     &__links {

@@ -661,6 +661,13 @@ ul, li {
 .footer__social img {
   display: inline-block;
 }
+.footer__social a svg:hover #facebook,
+.footer__social a svg:hover #youtube,
+.footer__social a svg:hover #twitter,
+.footer__social a svg:hover #pinterest,
+.footer__social a svg:hover #instagram {
+  fill: #31d35c;
+}
 .footer__links--1 li {
   margin-bottom: 1.375rem;
 }
