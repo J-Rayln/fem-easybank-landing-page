@@ -126,12 +126,14 @@
     }
 
     .nav {
+        display: block;
         position: absolute;
         top: f.rem(75);
-        left: 1rem;
         right: 1rem;
+        left: 1rem;
+        z-index: 10;
         background-color: var(--clr-neutral-white);
-        display: block;
+        font-size: f.rem(18);
         text-align: center;
         border-radius: .5rem;
         
